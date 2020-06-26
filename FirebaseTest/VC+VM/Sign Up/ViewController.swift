@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func clickOnSignUp(_ sender: UIButton) {
         
         unuse()
@@ -38,16 +39,16 @@ class ViewController: UIViewController {
                 switch AuthErrorCode(rawValue: error.code) {
                 case .operationNotAllowed:
                     print("")
-                // Error: The given sign-in provider is disabled for this Firebase project. Enable it in the Firebase console, under the sign-in method tab of the Auth section.
+                    
                 case .emailAlreadyInUse:
                     print("")
-                // Error: print("")The email address is already in use by another account.
+                    
                 case .invalidEmail:
                     print("")
-                // Error: The email address is badly formatted.
+                    
                 case .weakPassword:
                     print("")
-                // Error: The password must be 6 characters long or more.
+                    
                 default:
                     print("Error: \(error.localizedDescription)")
                 }
