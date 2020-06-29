@@ -11,7 +11,6 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var txt2: UILabel!
     @IBOutlet weak var txt3: UILabel!
-    @IBOutlet weak var txt4: UILabel!
     @IBOutlet weak var txt1: UILabel!
     
     override func awakeFromNib() {
@@ -26,9 +25,9 @@ class TableViewCell: UITableViewCell {
     
     func configureCell(with model: User) {
         
-        txt2.text = model.Email
-        txt1.text = model.LastName
-        txt3.text = model.Email 
+        txt1.text = model.Email
+        txt2.text = model.FirstName
+        txt3.text = model.LastName
     }
     
 }

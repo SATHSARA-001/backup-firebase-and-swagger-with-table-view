@@ -12,6 +12,7 @@
 		AE50AF5179D549C2474C34D9 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FD8B6249E0E78F488C7F30 /* Pods_FirebaseTest.framework */; };
 		D098954D24A4B1060084BA14 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098954C24A4B1060084BA14 /* TableViewCell.swift */; };
 		D0DBA30E24A5AF0500723994 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DBA30D24A5AF0500723994 /* User.swift */; };
+		D0F01F4024A9BAF40083B32F /* UpdateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F01F3F24A9BAF40083B32F /* UpdateUserVC.swift */; };
 		D0F3384D24A463F600F5B70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3384C24A463F600F5B70B /* AppDelegate.swift */; };
 		D0F3384F24A463F600F5B70B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3384E24A463F600F5B70B /* SceneDelegate.swift */; };
 		D0F3385124A463F600F5B70B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3385024A463F600F5B70B /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		CEB29F52C095422DE5FE6EFF /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D098954C24A4B1060084BA14 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D0DBA30D24A5AF0500723994 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D0F01F3F24A9BAF40083B32F /* UpdateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserVC.swift; sourceTree = "<group>"; };
 		D0F3384924A463F600F5B70B /* FirebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F3384C24A463F600F5B70B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F3384E24A463F600F5B70B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				D098954C24A4B1060084BA14 /* TableViewCell.swift */,
 				D0F3388224A4A93000F5B70B /* HomeVC.swift */,
+				D0F01F3F24A9BAF40083B32F /* UpdateUserVC.swift */,
 				D0DBA30D24A5AF0500723994 /* User.swift */,
 			);
 			path = "Home Page (Main Menu)";
@@ -521,6 +524,7 @@
 				D098954D24A4B1060084BA14 /* TableViewCell.swift in Sources */,
 				D0F3388124A48C4900F5B70B /* ResetPWDVC.swift in Sources */,
 				D0F3384D24A463F600F5B70B /* AppDelegate.swift in Sources */,
+				D0F01F4024A9BAF40083B32F /* UpdateUserVC.swift in Sources */,
 				D0F3388324A4A93000F5B70B /* HomeVC.swift in Sources */,
 				D0F3384F24A463F600F5B70B /* SceneDelegate.swift in Sources */,
 				D0F3388524A4AB2B00F5B70B /* AddUserVC.swift in Sources */,

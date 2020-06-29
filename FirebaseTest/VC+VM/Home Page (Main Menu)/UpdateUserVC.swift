@@ -1,8 +1,8 @@
 //
-//  AddUserVC.swift
+//  UpdateUserVC.swift
 //  FirebaseTest
 //
-//  Created by Sathsara Maduranga on 6/25/20.
+//  Created by Sathsara Maduranga on 6/29/20.
 //  Copyright © 2020 Sathsara Maduranga. All rights reserved.
 //
 
@@ -11,11 +11,29 @@ import FirebaseDatabase
 import RxSwift
 import RxCocoa
 
-class AddUserVC: UIViewController {
+class UpdateUserVC: UIViewController {
+    
+    var id  : String?
+    var fname : String?
+    var lname : String?
+    var Email : String?
+    
+    
+    
+    @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtFName: UITextField!
-    @IBOutlet weak var txtLName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var btnAdd: UIButton!
+    @IBOutlet weak var btnUpdate: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        txtEmail.text = Email
+        txtFName.text = fname
+        txtLastName.text = lname
+        
+        addObservers()
+        
+    }
     
     var firstname = BehaviorRelay<String>(value: "")
     var lastname = BehaviorRelay<String>(value: "")
@@ -25,18 +43,14 @@ class AddUserVC: UIViewController {
     
     var bag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addObservers()
-    }
     
     
     
     func addObservers() {
         
-        btnAdd.rx.tap
+        btnUpdate.rx.tap
             .subscribe() {[weak self] event in
-                self?.addNewUserToList()
+                self?.updateUser(id: self?.id ?? "")
         }
         .disposed(by: bag)
         
@@ -45,7 +59,7 @@ class AddUserVC: UIViewController {
             .bind(to: firstname)
             .disposed(by: bag)
         
-        txtLName.rx.text
+        txtLastName.rx.text
             .orEmpty
             .bind(to: lastname)
             .disposed(by: bag)
@@ -56,31 +70,27 @@ class AddUserVC: UIViewController {
             .disposed(by: bag)
     }
     
-    func addNewUserToList() {
+    func updateUser(id: String) {
         
-        let _user = User(id: "" ,FirstName: self.firstname.value, LastName: self.lastname.value, Email: self.email.value)
-        let ref = Database.database().reference(withPath: "users").childByAutoId()
-        let newUserId = ref.key ?? NSUUID().uuidString
+        let ref = Database.database().reference(withPath: "users")
+        
+        let newUserId = id
         let userInfoDictionary = ["id" :newUserId,
                                   "firstname" : self.firstname.value,
                                   "lastname" : self.lastname.value,
                                   "email" : self.email.value]
         
-        
-        ref.setValue(userInfoDictionary) {
+        ref.child(newUserId).updateChildValues(userInfoDictionary) {
             (error:Error?, ref:DatabaseReference) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                var currentUsers: [User] = HomeVC().userList.value
-                currentUsers.append(_user)
+                let currentUsers: [User] = HomeVC().userList.value
                 HomeVC().userList.accept(currentUsers)
             }
         }
     }
     
     
+    
 }
-
-
-
